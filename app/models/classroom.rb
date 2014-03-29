@@ -3,4 +3,5 @@ class Classroom < ActiveRecord::Base
   has_one :incentive_scheme
   has_many :users, as: :teachers
   has_many :users, as: :students
+  belongs_to :subject
 end
