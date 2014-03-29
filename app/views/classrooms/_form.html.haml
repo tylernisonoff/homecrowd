@@ -1,0 +1,7 @@
+= simple_nested_form_for @classroom do |f|
+  = f.input :name, placeholder: 'Bio 101'
+  = f.fields_for :incentive_schemes do |i|
+    = i.input :create_guide_score, as: :integer, input_html: {value: 0}
+    = i.input :update_guid_score, as: :integer, input_html: {value: 0}
+    = i.input :view_guide_score, as: :integer, input_html: {value: 0}
+  = f.button :submit
