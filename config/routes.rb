@@ -3,6 +3,7 @@ Homecrowd::Application.routes.draw do
 
   root to: 'static#index'
   resources :classrooms
+  resources :subjects
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
