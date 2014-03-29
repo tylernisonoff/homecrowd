@@ -11,7 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140329210606) do
+ActiveRecord::Schema.define(:version => 20140329211354) do
+
+  create_table "classrooms", :force => true do |t|
+    t.integer  "subject_id"
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "incentive_shemes", :force => true do |t|
+    t.integer  "classroom_id"
+    t.integer  "create_guide_score", :default => 0
+    t.integer  "update_guide_score", :default => 0
+    t.integer  "view_guide_score",   :default => 0
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
