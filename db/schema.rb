@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(:version => 20140329213925) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "incentive_shemes", :force => true do |t|
+  create_table "incentive_schemes", :force => true do |t|
     t.integer  "classroom_id"
     t.integer  "create_guide_score", :default => 0
     t.integer  "update_guide_score", :default => 0
