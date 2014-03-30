@@ -11,6 +11,7 @@ Homecrowd::Application.routes.draw do
     member do
       post 'register'
     end
+    resources :study_guides
   end
   resources :subjects
   resources :users
