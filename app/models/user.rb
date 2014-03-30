@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
     :score
   # attr_accessible :title, :body
   has_and_belongs_to_many :classrooms
+
+  def student?
+    self.type.eql? "Student"
+  end
 end
