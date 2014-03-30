@@ -24,7 +24,7 @@ class StaticController < ApplicationController
     if @user.save
       redirect_to user_path(@user)
     else
-      redirect_to '/student/sign_up'
+      redirect_to '/teacher/sign_up'
     end
   end
 
