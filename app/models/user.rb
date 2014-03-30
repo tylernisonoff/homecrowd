@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
 
   has_many :study_guides
 
+  has_many :user_actions
+
   def student?
     self.type.eql? "Student"
   end

@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
     if user_signed_in?
       action = UserAction.new(
         action_type: action_type, obj_type: object.class.to_s,
-        obj_id: object.id)
+        obj_id: object.id, user: current_user)
       if action.save
         if self.respond_to? action_trigger_method(action_type, object.class)
           self.send(action_trigger_method(action_type, object.class), object)
