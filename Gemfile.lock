@@ -112,6 +112,9 @@ GEM
     uglifier (2.5.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    verbs (2.1.4)
+      activesupport (>= 2.3.4)
+      i18n
     warden (1.2.3)
       rack (>= 1.0)
 
@@ -130,3 +133,4 @@ DEPENDENCIES
   simple_form
   sqlite3
   uglifier (>= 1.0.3)
+  verbs

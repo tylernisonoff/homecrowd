@@ -31,6 +31,7 @@ class ClassroomsController < ApplicationController
 
   def show
     @classroom = Classroom.find(params[:id])
+    @user_actions = UserAction.where(user_id: @classroom.students)
   end
 
   def register

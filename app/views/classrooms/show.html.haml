@@ -3,4 +3,8 @@
 %h2 Students
 %ul
 - @classroom.students.each do |user|
- %li= link_to user.email, user_path(user)
+  %li= link_to user.email, user_path(user)
+%h2 Feed
+%ul
+  - @user_actions.each do |action|
+    %li= "#{action.user.email} #{past(action.action_type)} #{action.obj_type.underscore.sub('_', ' ')}"
