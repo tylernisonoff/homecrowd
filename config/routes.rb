@@ -1,4 +1,9 @@
 Homecrowd::Application.routes.draw do
+  match 'teacher/sign_up' => 'static#teacher_new'
+  match 'student/sign_up' => 'static#student_new'
+  match 'teacher/' => 'static#teacher_create'
+  match 'student/' => 'static#student_create'
+
   devise_for :users
 
   root to: 'static#index'

@@ -1,0 +1,7 @@
+%h1 Sign Up
+= simple_form_for(@user, :url => '/student') do |f|
+  = f.input :email
+  = f.input :password
+  = f.input :password_confirmation
+  = f.input :type, as: :hidden, input_html: { value: @user.type }
+  = f.submit 'Sign up'
