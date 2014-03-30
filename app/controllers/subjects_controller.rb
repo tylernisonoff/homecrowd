@@ -5,6 +5,7 @@ class SubjectsController < ApplicationController
 
   def show
     @subject = Subject.find(params[:id])
+    save_action(:view, @subject)
   end
 
   def new
