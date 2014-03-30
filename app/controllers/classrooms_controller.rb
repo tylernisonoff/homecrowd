@@ -31,7 +31,7 @@ class ClassroomsController < ApplicationController
 
   def show
     @classroom = Classroom.find(params[:id])
-    @user_actions = UserAction.where(user_id: @classroom.students)
+    @user_actions = UserAction.where(user_id: @classroom.students).order('created_at DESC')
   end
 
   def register
