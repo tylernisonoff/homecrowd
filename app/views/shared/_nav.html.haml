@@ -4,14 +4,11 @@
       =link_to "Homecrowd", root_path, class: "navbar-brand"
     .collapse.navbar-collapse
       %ul.nav.navbar-nav
-        %li.active
-          =link_to "Link", "#"
+        - if user_signed_in?
+          %li
+            =link_to "My Page", user_path(current_user)
         %li
-          =link_to "Link", "#"
-        %li
-          =link_to "Link", "#"
-        %li
-          =link_to "Link", "#"
+          =link_to "Classrooms", classrooms_path
       %ul.nav.navbar-nav.navbar-right
         %li
           =link_to "Sign In", new_user_session_path
