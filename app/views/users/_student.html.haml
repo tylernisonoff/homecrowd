@@ -10,3 +10,8 @@
         %ul.list-group
           - @user.classrooms.each do |classroom|
             %li.list-group-item= link_to classroom.name, url_for(classroom)
+    .row.class-box
+      .col-md-12
+        %ul.list-group
+          - @user.achievements.each do |achievement|
+            %li.list-group-item= achievement.name
