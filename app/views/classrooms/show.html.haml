@@ -3,11 +3,12 @@
     .col-md-12
       %h1.textcenter= "#{@classroom.name} - #{@classroom.subject.name}"
 
-  .col-md-7
-    %h2.textcenter Study Guides
+  .col-md-7.textcenter
+    %h2 Study Guides
     %ul.list-group
     - @classroom.study_guides.each do |guide|
       %li.list-group-item.textcenter= link_to guide.name, guide.doc_url, target: '_blank'
+    = link_to "<button class='btn btn-primary newstudy'>New Study Guide</button>".html_safe, new_classroom_study_guide_path(@classroom)
     %h2.textcenter Students
     %ul.list-group
       - @classroom.students.sort_by{|o| o.score }.reverse.each do |user|
