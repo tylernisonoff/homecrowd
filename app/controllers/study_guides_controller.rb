@@ -16,7 +16,7 @@ class StudyGuidesController < ApplicationController
     @study_guide.doc_url = get_url
     if @study_guide.save
       save_action(:create, @study_guide)
-      redirect_to classroom_study_guide_path(@classroom, @study_guide)
+      redirect_to classroom_path(@classroom)
     else
       render 'new'
     end
