@@ -1,12 +1,17 @@
 %h1.main= "#{@classroom.name} - #{@classroom.subject.name}"
 
 .col-md-3
-  %h2.textcenter Students
+  %h2.textcenter Study Guides
   %ul.list-group
-  - @classroom.students.each do |user|
-    %li.list-group-item= link_to user.email, user_path(user)
+  - @classroom.study_guides.each do |guide|
+    %li.list-group-item= link_to guide.name, guide.doc_url, target: '_blank'
 .col-md-6
   %h2.textcenter Feed
   %ul.list-group
     - @user_actions.each do |action|
       %li.list-group-item= "#{action} - #{time_ago_in_words(action.created_at)} ago"
+.col-md-3
+  %h2.textcenter Students
+  %ul.list-group
+    - @classroom.students.sort_by{|o| o.score }.reverse.each do |user|
+      %li.list-group-item= link_to "#{user.full_name} - #{user.score}", user_path(user)
