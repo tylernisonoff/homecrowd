@@ -1,7 +1,7 @@
 %h1 Classrooms
 - @classrooms.each do |c|
   .classroom
-    %h3= "#{c.name} - #{c.subject.name}"
+    %h3=link_to "#{c.name} - #{c.subject.name}", classroom_path(c)
     - if student?
       - if current_user.classrooms.include? c
         %p Registered
