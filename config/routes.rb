@@ -13,6 +13,7 @@ Homecrowd::Application.routes.draw do
     end
     resources :study_guides
   end
+  resources :study_guides
   resources :subjects
   resources :users
   # The priority is based upon order of creation:
