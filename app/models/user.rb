@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
 
   has_many :user_actions
 
+  has_many :achievements
+
   def student?
     type.eql? "Student"
   end
