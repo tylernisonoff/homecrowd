@@ -1,0 +1,8 @@
+.row
+  .col-md-9
+    %ul.list-group
+      - @user.classrooms.each do |classroom|
+        %li.list-group-item= link_to classroom.name, url_for(classroom)
+  .col-md-3
+    = render partial: 'user_box', locals: {user: @user}
+
