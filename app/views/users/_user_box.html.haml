@@ -3,4 +3,5 @@
     .avatar= image_tag(avatar_url(user), width: 60)
   .col-md-4
     .name= "#{user.first_name} #{user.last_name}"
-    .score= "#{user.score} points"
+    - if @user.student?
+      .score= "#{user.score} points"

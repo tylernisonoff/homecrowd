@@ -1,6 +1,6 @@
 .row
   .col-md-9
-    %ul.list-group
+    %ul.list-group.action-list
       - @actions.each do |action|
         = render partial: 'user_actions/action', locals: {action: action}
   .col-md-3
