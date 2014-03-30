@@ -10,8 +10,10 @@
         %li
           =link_to "Classrooms", classrooms_path
       %ul.nav.navbar-nav.navbar-right
-        %li
-          =link_to "Sign In", new_user_session_path
-        %li
-          =link_to "Sign Out", destroy_user_session_path, method: 'delete'
+        - if !user_signed_in?
+          %li
+            =link_to "Sign In", new_user_session_path
+        -else 
+          %li
+            =link_to "Sign Out", destroy_user_session_path, method: 'delete'
 
