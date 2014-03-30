@@ -1,5 +1,9 @@
+require "net/http"
+require "uri"
+
 class StaticController < ApplicationController
   def index
+    @random = get_random_fact
     if user_signed_in?
       redirect_to user_path(current_user)
     end
@@ -31,4 +35,11 @@ class StaticController < ApplicationController
     end
   end
 
+  private
+  def get_random_fact
+    endpoint = "http://numbersapi.com/#{Date.today.month}/#{Date.today.day}/date"
+    uri = URI.parse(endpoint)
+    res = Net::HTTP.get_response(uri)
+    res.body
+  end
 end
