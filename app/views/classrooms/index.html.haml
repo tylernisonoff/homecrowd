@@ -9,3 +9,7 @@
         - if student?
           - if !current_user.classrooms.include? classroom
             = link_to "<button class='btn btn-primary'>Register</button>".html_safe, register_classroom_path(classroom), method: 'post'
+        - else
+          - if !current_user.classrooms.include? classroom
+            = link_to "<button class='btn btn-primary'>Join</button>".html_safe, register_classroom_path(classroom), method: 'post'
+

@@ -36,7 +36,9 @@ class ClassroomsController < ApplicationController
 
   def register
     @classroom = Classroom.find(params[:id])
-    @classroom.students << current_user
+    @classroom.students << current_user if current_user.student?
+    @classroom.teachers << current_user if !current_user.student?
     redirect_to classroom_path(@classroom)
   end
+
 end
