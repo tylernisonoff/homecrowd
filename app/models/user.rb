@@ -16,10 +16,14 @@ class User < ActiveRecord::Base
   has_many :user_actions
 
   def student?
-    self.type.eql? "Student"
+    type.eql? "Student"
+  end
+
+  def full_name
+    "#{first_name} #{last_name}"
   end
 
   def name_and_initial
-    "#{self.first_name} #{self.last_name[0,1]}."
+    "#{first_name} #{last_name[0,1]}."
   end
 end

@@ -1,5 +1,7 @@
-%h2 Score - #{@user.score}
-%h2 Feed
-%ul
-  - @actions.each do |action|
-    %li= "#{action} - #{time_ago_in_words(action.created_at)} ago"
+.col-md-3
+  %h2 Score - #{@user.score}
+.col-md-6
+  %h2 Feed
+  %ul.list-group
+    - @actions.each do |action|
+      %li.list-group-item= "#{action} - #{time_ago_in_words(action.created_at)} ago"
