@@ -1,12 +1,15 @@
-%h1.main= "#{@classroom.name} - #{@classroom.subject.name}"
+.container
+  .row
+    .col-md-12
+      %h1= "#{@classroom.name} - #{@classroom.subject.name}"
 
-.col-md-3
-  %h2.textcenter Students
-  %ul.list-group
-  - @classroom.students.each do |user|
-    %li.list-group-item= link_to user.email, user_path(user)
-.col-md-6
-  %h2.textcenter Feed
-  %ul.list-group
-    - @user_actions.each do |action|
-      %li.list-group-item= "#{action} - #{time_ago_in_words(action.created_at)} ago"
+  .row
+    .col-md-9
+      %ul.list-group
+        - @user_actions.each do |action|
+          = render partial: 'user_actions/action', locals: {action: action}
+    .col-md-3
+      %h2.textcenter Students
+      %ul.list-group
+      - @classroom.students.each do |user|
+        %li.list-group-item= link_to user.email, user_path(user)
