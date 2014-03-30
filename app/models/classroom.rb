@@ -4,8 +4,6 @@ class Classroom < ActiveRecord::Base
   belongs_to :subject
   accepts_nested_attributes_for :incentive_scheme
   accepts_nested_attributes_for :subject
-  has_many :teachers
-  has_many :students
   has_many :study_guides
   belongs_to :subject
   has_and_belongs_to_many :students
