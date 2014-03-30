@@ -7,4 +7,5 @@ class Classroom < ActiveRecord::Base
   has_many :teachers
   has_many :students
   belongs_to :subject
+  has_and_belongs_to_many :users
 end

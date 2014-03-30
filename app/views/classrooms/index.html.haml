@@ -1,0 +1,9 @@
+%h1 Classrooms
+- @classrooms.each do |c|
+  .classroom
+    %h3= "#{c.name} - #{c.subject.name}"
+    - if student?
+      - if current_user.classrooms.include? c
+        %p Registered
+      - else
+        = button_to "Register", register_classroom_path(c)

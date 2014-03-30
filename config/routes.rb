@@ -7,7 +7,11 @@ Homecrowd::Application.routes.draw do
   devise_for :users
 
   root to: 'static#index'
-  resources :classrooms
+  resources :classrooms do
+    member do
+      post 'register'
+    end
+  end
   resources :subjects
   # The priority is based upon order of creation:
   # first created -> highest priority.

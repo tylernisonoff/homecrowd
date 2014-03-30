@@ -1,4 +1,7 @@
 class ClassroomsController < ApplicationController
+  def index
+    @classrooms = Classroom.all
+  end
   def new
     @classroom = Classroom.new
     @classroom.build_incentive_scheme
@@ -24,5 +27,15 @@ class ClassroomsController < ApplicationController
 
   def classroom_params
     params[:classroom].slice(:name)
+  end
+
+  def show
+    @classroom = Classroom.find(params[:id])
+  end
+
+  def register
+    @classroom = Classroom.find(params[:id])
+    @classroom.users << current_user
+    redirect_to classroom_path(@classroom)
   end
 end
