@@ -22,12 +22,12 @@ ActiveRecord::Schema.define(:version => 20140330025700) do
 
   create_table "classrooms_students", :force => true do |t|
     t.integer "classroom_id"
-    t.integer "user_id"
+    t.integer "student_id"
   end
 
   create_table "classrooms_teachers", :force => true do |t|
     t.integer "classroom_id"
-    t.integer "user_id"
+    t.integer "teacher_id"
   end
 
   create_table "incentive_schemes", :force => true do |t|
