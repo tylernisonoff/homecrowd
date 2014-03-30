@@ -8,5 +8,6 @@ class Classroom < ActiveRecord::Base
   has_many :students
   has_many :study_guides
   belongs_to :subject
-  has_and_belongs_to_many :users
+  has_and_belongs_to_many :students
+  has_and_belongs_to_many :teachers
 end
