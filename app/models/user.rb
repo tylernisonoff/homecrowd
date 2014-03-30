@@ -18,4 +18,8 @@ class User < ActiveRecord::Base
   def student?
     self.type.eql? "Student"
   end
+
+  def name_and_initial
+    "#{self.first_name} #{self.last_name[0,1]}."
+  end
 end

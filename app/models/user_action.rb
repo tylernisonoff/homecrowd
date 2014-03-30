@@ -6,6 +6,6 @@ class UserAction < ActiveRecord::Base
 
   def to_s
     action = action_type.verb.conjugate tense: :past, aspect: :perfective
-    "#{user.email} #{action_type} #{obj_type.underscore.sub('_', ' ')}"
+    "#{user.name_and_initial} #{action} #{obj_type.underscore.sub('_', ' ')}"
   end
 end

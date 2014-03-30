@@ -5,7 +5,7 @@
   %ul.list-group
   - @classroom.students.each do |user|
     %li.list-group-item= link_to user.email, user_path(user)
-.col-md-9
+.col-md-6
   %h2.textcenter Feed
   %ul.list-group
     - @user_actions.each do |action|
