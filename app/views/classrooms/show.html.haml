@@ -1,10 +1,12 @@
-%h3= "#{@classroom.name} - #{@classroom.subject.name}"
+%h1.main= "#{@classroom.name} - #{@classroom.subject.name}"
 
-%h2 Students
-%ul
-- @classroom.students.each do |user|
-  %li= link_to user.email, user_path(user)
-%h2 Feed
-%ul
-  - @user_actions.each do |action|
-    %li= "#{action} - #{time_ago_in_words(action.created_at)} ago"
+.col-md-3
+  %h2.textcenter Students
+  %ul.list-group
+  - @classroom.students.each do |user|
+    %li.list-group-item= link_to user.email, user_path(user)
+.col-md-9
+  %h2.textcenter Feed
+  %ul.list-group
+    - @user_actions.each do |action|
+      %li.list-group-item= "#{action} - #{time_ago_in_words(action.created_at)} ago"

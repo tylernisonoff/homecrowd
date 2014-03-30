@@ -7,7 +7,5 @@
         .classroom
           %h3=link_to "#{classroom.name} - #{classroom.subject.name}", classroom_path(classroom)
         - if student?
-          - if current_user.classrooms.include? classroom
-            %p Registered
-          - else
+          - if !current_user.classrooms.include? classroom
             = link_to "<button class='btn btn-primary'>Register</button>".html_safe, register_classroom_path(classroom), method: 'post'
