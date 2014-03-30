@@ -2,10 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.maintitle {
+.maintitle, .homebtn, .mainimg, .form{
   text-align: center;
 }
 
-.homebtn{
-  text-align: center;
+.maintitle {
+  font-size: 120px;
+}
+
+.form {
+  font-size: 20px;
+}
+.submit-btn {
+  margin-top: 10px;
 }

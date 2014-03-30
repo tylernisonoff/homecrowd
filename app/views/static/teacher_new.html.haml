@@ -1,7 +1,8 @@
-%h1 Sign Up
-= simple_form_for(@user, :url => '/teacher') do |f|
-  = f.input :email
-  = f.input :password
-  = f.input :password_confirmation
-  = f.input :type, as: :hidden, input_html: { value: @user.type }
-  = f.submit 'Sign up'
+.form
+  %h1 Sign Up
+  = simple_form_for(@user, :url => '/teacher') do |f|
+    = f.input :email
+    = f.input :password
+    = f.input :password_confirmation
+    = f.input :type, as: :hidden, input_html: { value: @user.type }
+    = f.button :submit, 'Sign up', class: 'btn btn-primary submit-btn'
