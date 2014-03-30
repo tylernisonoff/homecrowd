@@ -13,4 +13,6 @@
         - else
           %span.glyphicon.glyphicon-record
     .col-md-11
-      .action-text= "#{action}"
+      .action-text
+        = "#{action.user.name_and_initial} #{past(action.action_type)}"
+        = link_to(action.obj_type.underscore.sub('_', ' '), url_for(action.get_obj))

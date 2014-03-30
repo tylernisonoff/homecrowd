@@ -8,4 +8,8 @@ class UserAction < ActiveRecord::Base
     action = action_type.verb.conjugate tense: :past, aspect: :perfective
     "#{user.name_and_initial} #{action} #{obj_type.underscore.sub('_', ' ')}"
   end
+
+  def get_obj
+    obj_type.constantize.find obj_id
+  end
 end

@@ -26,7 +26,7 @@ class StudyGuidesController < ApplicationController
     @study_guide = StudyGuide.find params[:id]
     save_action(:view, @study_guide)
   end
-  
+
   private
   def get_url
     endpoint = "http://boiling-garden-7787.herokuapp.com/"
