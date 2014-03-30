@@ -1,9 +1,12 @@
-%h1 Classrooms
-- @classrooms.each do |c|
-  .classroom
-    %h3=link_to "#{c.name} - #{c.subject.name}", classroom_path(c)
-    - if student?
-      - if current_user.classrooms.include? c
-        %p Registered
-      - else
-        = button_to "Register", register_classroom_path(c)
+.classes
+  .col-md-3
+  .col-md-6.classrooms
+    %h1 Classrooms
+    - @classrooms.each do |classroom|
+      .classroom
+        %h3=link_to "#{classroom.name} - #{classroom.subject.name}", classroom_path(classroom)
+        - if student?
+          - if current_user.classrooms.include? classroom
+            %p Registered
+          - else
+            = button_to "Register", register_classroom_path(classroom)

@@ -1,0 +1,7 @@
+.classroom
+  %h3=link_to "#{classroom.name} - #{classroom.subject.name}", classroom_path(classroom)
+  - if student?
+    - if current_user.classrooms.include? classroom
+      %p Registered
+    - else
+      = button_to "Register", register_classroom_pathc)
