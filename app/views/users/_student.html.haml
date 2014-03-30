@@ -5,3 +5,8 @@
         = render partial: 'user_actions/action', locals: {action: action}
   .col-md-3
     = render partial: 'user_box', locals: {user: @user}
+    .row.class-box
+      .col-md-12
+        %ul.list-group
+          - @user.classrooms.each do |classroom|
+            %li.list-group-item= link_to classroom.name, url_for(classroom)
