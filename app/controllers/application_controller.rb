@@ -21,6 +21,6 @@ class ApplicationController < ActionController::Base
   end
 
   def action_trigger_method(action_type, klass)
-    "do_#{action_type}_#{klass.to_s.downcase}"
+    "do_#{action_type}_#{klass.to_s.underscore}"
   end
 end
