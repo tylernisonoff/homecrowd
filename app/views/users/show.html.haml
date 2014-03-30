@@ -1,2 +1,5 @@
-%h1.textcenter= @user.full_name
-= render 'student' if @user.student?
+.container
+  .row
+    .col-md-12
+      %h1= @user.full_name
+  = render 'student' if @user.student?

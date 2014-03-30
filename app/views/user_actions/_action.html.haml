@@ -1,0 +1,16 @@
+.action-row
+  .row
+    .col-md-11.col-md-offset-1
+      .action-time-ago= "#{time_ago_in_words(action.created_at)} ago"
+  .row
+    .col-md-1
+      .action-icon
+        = image_tag(avatar_url(action.user, width: 30), width: 30)
+        - if action.action_type.eql? 'view'
+          %span.glyphicon.glyphicon-eye-open
+        - elsif action.action_type.eql? 'create'
+          %span.glyphicon.glyphicon-floppy-saved
+        - else
+          %span.glyphicon.glyphicon-record
+    .col-md-11
+      .action-text= "#{action}"
