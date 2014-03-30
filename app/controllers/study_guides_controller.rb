@@ -25,6 +25,7 @@ class StudyGuidesController < ApplicationController
   def show
     @study_guide = StudyGuide.find params[:id]
     save_action(:view, @study_guide)
+    redirect_to @study_guide.doc_url
   end
 
   private
