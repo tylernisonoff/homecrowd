@@ -12,14 +12,20 @@ class StaticController < ApplicationController
 
   def student_create
     @user = Student.new(params[:student])
-    @user.save
-    redirect_to :root
+    if @user.save
+      redirect_to user_path(@user)
+    else
+      redirect_to '/student/sign_up'
+    end
   end
 
   def teacher_create
     @user = Student.new(params[:teacher])
-    @user.save
-    redirect_to :root
+    if @user.save
+      redirect_to user_path(@user)
+    else
+      redirect_to '/student/sign_up'
+    end
   end
 
 end

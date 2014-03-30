@@ -36,7 +36,7 @@ class ClassroomsController < ApplicationController
 
   def register
     @classroom = Classroom.find(params[:id])
-    @classroom.users << current_user
+    @classroom.students << current_user
     redirect_to classroom_path(@classroom)
   end
 end

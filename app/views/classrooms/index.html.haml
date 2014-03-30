@@ -10,4 +10,4 @@
           - if current_user.classrooms.include? classroom
             %p Registered
           - else
-            = link_to "<button class='btn btn-primary'>Register</button>".html_safe, register_classroom_path(classroom)
+            = link_to "<button class='btn btn-primary'>Register</button>".html_safe, register_classroom_path(classroom), method: 'post'

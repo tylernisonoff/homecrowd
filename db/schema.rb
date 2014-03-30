@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140330025700) do
+ActiveRecord::Schema.define(:version => 20140330055731) do
 
   create_table "classrooms", :force => true do |t|
     t.integer  "subject_id"
@@ -78,6 +78,8 @@ ActiveRecord::Schema.define(:version => 20140330025700) do
     t.datetime "updated_at",                             :null => false
     t.string   "type"
     t.integer  "score",                  :default => 0
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
