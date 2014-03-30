@@ -7,4 +7,4 @@
 %h2 Feed
 %ul
   - @user_actions.each do |action|
-    %li= "#{action.user.email} #{past(action.action_type)} #{action.obj_type.underscore.sub('_', ' ')}"
+    %li= "#{action} - #{time_ago_in_words(action.created_at)} ago"
